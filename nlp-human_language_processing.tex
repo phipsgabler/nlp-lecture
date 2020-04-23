@@ -22,6 +22,8 @@
 \newcommand{\bulletminus}{\textcolor{tugred}{\faMinusCircle}}
 \newcommand{\bulletconclusion}{\textcolor{tugblue}{\faArrowCircleRight}}
 
+\newcommand*{\doi}[1]{\href{http://doai.io/#1}{doi: #1}}
+
 \title{Natural Language Processing: \\ How do humans process language?}
 % \subtitle{Natural Language Processing}
 \author{Philipp Gabler <pgabler@student.tugraz.at>}
@@ -341,7 +343,6 @@
     \item \ex{There was cat all over the road}
     \item \ex{She smiled herself an upgrade}
     \end{itemize}
-
   \end{itemize}
 \end{frame}
 
@@ -360,24 +361,102 @@
     \item \ex{The content of the argument proceeds, path to the core of the argument, the direction
         has no substance}
     \end{itemize}
-
   \end{itemize}
 \end{frame}
 
 
 %//////////////////////////////////////////////////////////////////////
 \sectionheader[What does theory have to do with NLP, at all?]{\textbf{Applications}}
-\section{Practical Connections to NLP Applications}
+\section{Practical Connections to NLP}
 
-% https://langsci-press.org/catalog/book/111
-% https://scholar.google.com/scholar_url?url=http://www.academia.edu/download/31380659/vantrijp2013linguistic_assessment_criteria.pdf&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=8757869640222665985&ei=6_iWXpq6NMfAmAGj547QAg&scisig=AAGBfm2-ei3yMne0c9biGZ1SbQWI-mfaJA
-% https://www.sci-hub.tw/10.1515/lingvan-2018-0070 (PDF)
-% metaphor detection: a computation perspective (PDF)
-% http://arxiv.org/pdf/1609.09019v1.pdf
-% https://www.mitpressjournals.org/doi/pdfplus/10.1162/089120103322753356&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=15742121240912269262&ei=-wGXXuv1JJXGmAGqxoGwDA&scisig=AAGBfm1ovt2k8fe2r_pauAAxXlOs95xwrQ
+\begin{frame}{Overall assessment}
+  \begin{itemize}
+  \item We have now already seen some ideas that agree:
+    \begin{itemize}
+    \item Statistical learning (``usage based'')
+    \item Associative learning (``context based'')
+    \item Shallow processing (no creation of deep structures)
+    \end{itemize}
+  \end{itemize}
+  \textbf{Now: some examples of theory transfer from linguistics to NLP}
+\end{frame}
 
 
-%//////////////////////////////////////////////////////////////////////
-\sectionheader[Next: ???]{\textbf{Thank You!}}
+\begin{frame}{Information structure + Generative Grammar}
+	\textbf{Modeling Information Structure In A Cross-Linguistic Perspective\footnote{\protect\doi{10.5281/ZENODO.818365}}}
+  \begin{itemize}
+  % \item Song (2017)
+  \item Formalized version HPSG + Information structure
+  \item Improve machine translation across multiple languages
+  \item \textit{Information structure facilitates fluency in contiguous speech}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Construction Grammar + Semantics}
+	\textbf{Computational construction grammar for visual question answering\footnote{\protect\doi{10.1515/lingvan-2018-0070}}}
+  \begin{itemize}
+  % \item Nevens, Van Eecke, Beuls (2019)
+  \item Based on computational construction grammar
+  \item Mapping questions onto their executable semantic representations
+  \item \textit{Constructions succintly capture form-meaning pairs in a domain}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Generative Grammar + Parsing}
+	\textbf{Head-Driven Statistical Models for Natural Language Parsing\footnote{\protect\doi{10.1162/089120103322753356}}}
+  \begin{itemize}
+  % \item Collins (2003)
+  \item Actual parsing using a Generative Grammar formalism
+  \item Probabilistic context-free grammars to lexicalized grammars
+  \item Parse tree represented as sequence of decisions corresponding to a head-centered,
+    top-down derivation of the tree
+  \item \textit{UG isn't dead yet}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Fluid Construction Grammar + Agent-Based Modelling}
+	\textbf{Linguistic Assessment Criteria for Explaining Language Change\footnote{\protect\doi{10.1163/22105832-13030106}}}
+  \begin{itemize}
+  \item \ldots{} A Case Study on Syncretism in German Definite Articles.% van Trijp (2013)
+  \item Evolution of the German definite article paradigm
+  \item Agent-based simulation of communicative interactions (``language games''), implemented with
+    Fluid Construction Grammar
+  \item \textit{CxG can provide explanations for variation \& change}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Metaphor + Corpora}
+	\textbf{Psychologically Motivated Text Mining\footnote{\protect\href{http://arxiv.org/abs/1609.09019}{arXiv: 1609.09019}}}
+  \begin{itemize}
+  % \item Shutova, Lichtenstein:  (2016)
+  \item Corpus-based learning of patterns of metaphorical framing
+  \item Detection of the structure of metaphorical associations through clustering
+  \item \textit{Metaphors are useful and detectable empirically}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{More Cognitive Linguistics}
+	\textbf{Cognitive approach to natural language processing}
+  \begin{itemize}
+  % \item Sharp et.al. (2017)
+  \item Several essays, mostly on semantics in NLP
+  \item \textit{Word association, disambiguation, frequency estimation, stylistic analysis\ldots}
+  \end{itemize}
+\end{frame}
+
+% //////////////////////////////////////////////////////////////////////
+\sectionheader[Implementations are waiting for you.\\Next: ???]{\textbf{Thank You!}}
+
+\begin{frame}{References}
+  \begin{enumerate}
+  \scriptsize
+  \item B. Sharp, F. Sedes, and W. Lubaszewski, Eds., Cognitive approach to natural language processing. London: ISTE Press; Elsevier, 2017.
+  \item J. Nevens, P. Van Eecke, and K. Beuls, \textit{Computational construction grammar for visual question answering,} Linguistics Vanguard, vol. 5, no. 1, 2019
+  \item M. Collins, \textit{Head-Driven Statistical Models for Natural Language Parsing,} Computational Linguistics, vol. 29, no. 4, pp. 589--637, 2003
+  \item R. van Trijp, \textit{Linguistic Assessment Criteria for Explaining Language Change: A Case Study on Syncretism in German Definite Articles,} Language Dynamics and Change, vol. 3, no. 1, pp. 105–132, 2013
+  \item S. Song, Modeling Information Structure In A Cross-Linguistic Perspective. Berlin: Language Science Press, 2017.
+  \item E. Shutova and P. Lichtenstein, \textit{Psychologically Motivated Text Mining}, arXiv:1609.09019 [cs], 2016
+  \end{enumerate}
+\end{frame}
 
 \end{document}
